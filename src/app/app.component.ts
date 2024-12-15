@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'to-do-app';
+  tasks: string[] = [];
+
+  addTask(task: string) {
+    this.tasks.push(task);
+  }
+
+  removeTask(index: number) {
+    this.tasks.splice(index, 1);
+  }
 }

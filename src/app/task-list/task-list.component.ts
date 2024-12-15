@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-task-list',
-  imports: [],
   templateUrl: './task-list.component.html',
-  styleUrl: './task-list.component.css'
+  styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent {
+  @Input() tasks: string[] = [];
+  @Output() taskRemoved = new EventEmitter<number>();
 
+  removeTask(index: number) {
+    this.taskRemoved.emit(index);
+  }
 }

@@ -1,1 +1,11 @@
-<p>task-form works!</p>
+<div class="mb-3">
+    <form (submit)="addTask()">
+        <div class="input-group">
+            <input type="text" [(ngModel)]="taskName" placeholder="Enter new task" name="task" class="form-control"
+                required />
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary">Add Task</button>
+            </div>
+        </div>
+    </form>
+</div>
